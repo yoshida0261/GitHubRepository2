@@ -11,6 +11,7 @@ class MixiRepositoryImpl(private val dao : RepositoryDao) : MixiRepository {
 
         TODO("not implemented")
 
+        // dao, api clientを使用してデータの格納、取得を行う予定
         /*
         return GitHubApiClient.apiClient.getRepositoty("mixi-org")
             .doOnNext{

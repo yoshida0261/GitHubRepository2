@@ -9,7 +9,7 @@ class RepositoryDao(realm: Realm) {
     fun insert(repositorys: List<Repository>) {
 
         /*
-        TODO realm
+        TODO realmでオブジェクトを格納する
         realm.executeTransaction {
             realm.createObject(Repository::class.java)
         }
@@ -19,6 +19,7 @@ class RepositoryDao(realm: Realm) {
 
     fun findAll(): List<Repository> {
         TODO("not implemented")
+        // TODO  ここからrealmのデータを取得する
         /*
           realm.where(Repository::class.java).findAll()
 

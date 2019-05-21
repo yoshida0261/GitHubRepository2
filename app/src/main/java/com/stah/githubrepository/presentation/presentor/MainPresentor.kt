@@ -9,7 +9,7 @@ class MainPresentor(private val repository: MixiRepositoryImpl){
 
     fun getMixiRepository(){
         repository.findAllByPage(100)
-            // TODO show repository
+            // TODO  repositoryのデータをviewに返す
     }
 
     fun dispose(){
