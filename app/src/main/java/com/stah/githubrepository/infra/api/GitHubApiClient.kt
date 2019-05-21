@@ -1,4 +1,4 @@
-package com.stah.githubrepository.infra.datasource
+package com.stah.githubrepository.infra.api
 
 import com.google.gson.Gson
 import okhttp3.OkHttpClient

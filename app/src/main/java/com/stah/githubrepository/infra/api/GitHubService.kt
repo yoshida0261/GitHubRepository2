@@ -1,4 +1,4 @@
-package com.stah.githubrepository.infra.datasource
+package com.stah.githubrepository.infra.api
 
 import retrofit2.http.GET
 import retrofit2.http.Path
