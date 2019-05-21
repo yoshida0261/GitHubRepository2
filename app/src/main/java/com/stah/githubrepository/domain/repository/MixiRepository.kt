@@ -2,4 +2,4 @@
 package com.stah.githubrepository.domain.repository
 
 
-interface MixiRepository : WriteMixiRepository
+interface MixiRepository : WriteMixiRepository, ReadMixiRepository
