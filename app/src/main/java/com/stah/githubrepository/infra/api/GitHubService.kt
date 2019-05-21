@@ -8,5 +8,5 @@ import rx.Observable
 interface GitHubService {
 
     @GET("orgs/{org}/repos")
-    fun getRepositoty(@Path("org") org: String) : Observable<RepositoryJson>
+    fun getRepositoty(@Path("org") org: String) : Observable<List<RepositoryJson>>
 }

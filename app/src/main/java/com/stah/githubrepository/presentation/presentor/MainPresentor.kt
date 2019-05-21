@@ -1,12 +1,18 @@
 package com.stah.githubrepository.presentation.presentor
 
+import com.stah.githubrepository.infra.repository.MixiRepositoryImpl
 import io.reactivex.disposables.CompositeDisposable
 
 
-class MainPresentor{
+class MainPresentor(private val repository: MixiRepositoryImpl){
     private val disposables = CompositeDisposable()
 
     fun getMixiRepository(){
+        repository.findAllByPage(100)
+            // TODO show repository
+    }
 
+    fun dispose(){
+        disposables.dispose()
     }
 }

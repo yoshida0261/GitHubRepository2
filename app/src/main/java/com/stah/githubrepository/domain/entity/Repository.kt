@@ -1,8 +1,8 @@
 package com.stah.githubrepository.domain.entity
 
 
-class Repository(
+open class Repository(
     id: RepositoryId,
-    val name: String
-) : Entity<RepositoryId>(id) {
+    open val name: String
+) : Entity<RepositoryId>(id)  {  // TODO  RealmObject()
 }

@@ -1,10 +1,20 @@
 package com.stah.githubrepository.domain.mapper
 
-class RepositoryMapper {
+import com.stah.githubrepository.domain.entity.Repository
+import com.stah.githubrepository.domain.entity.RepositoryId
+import com.stah.githubrepository.infra.api.RepositoryJson
 
-    /*
-    fun convert(json : RepositoryJson) : Repository{
-       //todo
+object RepositoryMapper {
+
+    fun convert(json : List<RepositoryJson>) : List<Repository> {
+
+        val list = ArrayList<Repository>()
+        for (repositoryJson in json) {
+            list.add(        Repository(RepositoryId(""), "it"))
+        }
+        return list
     }
-    */
+
+
+
 }
