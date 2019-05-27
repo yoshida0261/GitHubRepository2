@@ -1,3 +1,3 @@
-package com.stah.githubrepository.infra.api
+package jp.co.stah.api
 
 data class RepositoryJson(val name :String)

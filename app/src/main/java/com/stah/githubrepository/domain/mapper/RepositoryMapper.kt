@@ -2,7 +2,7 @@ package com.stah.githubrepository.domain.mapper
 
 import com.stah.githubrepository.domain.entity.Repository
 import com.stah.githubrepository.domain.entity.RepositoryId
-import com.stah.githubrepository.infra.api.RepositoryJson
+import jp.co.stah.api.RepositoryJson
 
 object RepositoryMapper {
 
