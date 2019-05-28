@@ -12,12 +12,19 @@ class MixiRepositoryImpl(private val dao: RepositoryDao) : MixiRepository {
 
 
     override fun findAll(): Single<List<Repository>> {
-        return dao.findAll()
+        return GitHubApiClient.apiClient.getRepositoty("mixi-inc")
+            .map {
+                RepositoryConverter.convert(it)
+            }
+            .doOnSuccess {
+                dao.insert(it)
+            }
     }
 
 
+    // todo
     override fun insert(repository: MixiRepository): Single<List<Repository>> {
-        return GitHubApiClient.apiClient.getRepositoty("mixi-org")
+        return GitHubApiClient.apiClient.getRepositoty("mixi-inc")
             .map { RepositoryConverter.convert(it) }
             .doOnSuccess {
                 dao.insert(it)

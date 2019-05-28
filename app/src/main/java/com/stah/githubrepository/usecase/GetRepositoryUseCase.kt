@@ -1,10 +1,9 @@
 package com.stah.githubrepository.usecase
 
 import com.stah.githubrepository.domain.entity.Repository
-import com.stah.githubrepository.domain.entity.RepositoryId
-import rx.Single
+import io.reactivex.Single
 
 interface GetRepositoryUseCase {
 
-    fun execute(repositoryId: RepositoryId) : Single<Repository>
+    fun execute(): Single<List<Repository>>
 }

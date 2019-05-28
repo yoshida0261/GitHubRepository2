@@ -10,7 +10,7 @@ object RepositoryConverter {
 
         val list = ArrayList<Repository>()
         for (repositoryJson in json) {
-            list.add(        Repository(RepositoryId(""), "it"))
+            list.add(        Repository(RepositoryId(""), repositoryJson.name))
         }
         return list
     }

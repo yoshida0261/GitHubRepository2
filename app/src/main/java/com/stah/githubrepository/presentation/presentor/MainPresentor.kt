@@ -13,10 +13,13 @@ class MainPresentor(private val contract: Contract, private val repository: Mixi
     private val disposables = CompositeDisposable()
 
     fun getMixiRepository() {
-        val disposable = repository.findAll()
+        repository.findAll()
             .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { contract.showRepository(it) },
+                {
+                    Log.d("presenter", it[0].name)
+                    contract.showRepository(it)
+                },
                 { Log.e("repos", "#getContributors") }
             ).addTo(disposables)
     }
@@ -26,7 +29,7 @@ class MainPresentor(private val contract: Contract, private val repository: Mixi
     }
 
     interface Contract {
-        fun showRepository(contributors: List<Repository>)
+        fun showRepository(repository: List<Repository>)
     }
 }
 

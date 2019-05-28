@@ -1,11 +1,13 @@
 package com.stah.githubrepository.usecase
 
 import com.stah.githubrepository.domain.entity.Repository
-import com.stah.githubrepository.domain.entity.RepositoryId
-import rx.Single
+import com.stah.githubrepository.domain.repository.MixiRepository
+import io.reactivex.Single
 
-class GetRepositoryUseCaseImpl() : GetRepositoryUseCase {
-    override fun execute(repositoryId: RepositoryId): Single<Repository> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+class GetRepositoryUseCaseImpl(
+    private val repository: MixiRepository
+) : GetRepositoryUseCase {
+    override fun execute(): Single<List<Repository>> {
+        return repository.findAll()
     }
 }

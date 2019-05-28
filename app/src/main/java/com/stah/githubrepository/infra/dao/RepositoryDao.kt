@@ -1,32 +1,29 @@
 package com.stah.githubrepository.infra.dao
 
+import android.util.Log
 import com.stah.githubrepository.domain.entity.Repository
-import io.realm.Realm
 import io.reactivex.Single
+import io.realm.Realm
 
 // ここにDI
-class RepositoryDao(realm: Realm) {
+class RepositoryDao() {
 
-    private val realm = realm
+
+    private val realm = ArrayList<Repository>()
     fun insert(repositorys: List<Repository>) {
 
-        /*
-        TODO realmでオブジェクトを格納する
-        realm.executeTransaction {
-            realm.createObject(Repository::class.java)
+        repositorys.forEach {
+            Log.d("mixi", it.name)
+            realm.add(it)
         }
-        */
+
     }
 
-
     fun findAll(): Single<List<Repository>> {
-        TODO("not implemented")
-        // TODO  ここからrealmのデータを取得する
-        /*
-          realm.where(Repository::class.java).findAll()
 
-        return repositoryList
-        */
+        return Single.fromCallable {
+            realm
+        }
     }
 
 }
