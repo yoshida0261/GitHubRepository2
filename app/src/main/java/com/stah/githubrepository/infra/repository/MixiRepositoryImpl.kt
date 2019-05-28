@@ -5,7 +5,7 @@ import com.stah.githubrepository.domain.mapper.RepositoryConverter
 import com.stah.githubrepository.domain.repository.MixiRepository
 import com.stah.githubrepository.infra.dao.RepositoryDao
 import jp.co.stah.api.GitHubApiClient
-import rx.Single
+import io.reactivex.Single
 
 
 class MixiRepositoryImpl(private val dao: RepositoryDao) : MixiRepository {

@@ -2,7 +2,7 @@ package com.stah.githubrepository.infra.dao
 
 import com.stah.githubrepository.domain.entity.Repository
 import io.realm.Realm
-import rx.Single
+import io.reactivex.Single
 
 // ここにDI
 class RepositoryDao(realm: Realm) {

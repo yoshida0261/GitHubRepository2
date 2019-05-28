@@ -2,7 +2,7 @@ package jp.co.stah.api
 
 import retrofit2.http.GET
 import retrofit2.http.Path
-import rx.Single
+import io.reactivex.Single
 
 
 interface GitHubService {
