@@ -1,30 +1,26 @@
 package com.stah.githubrepository.infra.repository
 
 import com.stah.githubrepository.domain.entity.Repository
+import com.stah.githubrepository.domain.mapper.RepositoryConverter
 import com.stah.githubrepository.domain.repository.MixiRepository
 import com.stah.githubrepository.infra.dao.RepositoryDao
-import io.reactivex.Single
+import jp.co.stah.api.GitHubApiClient
+import rx.Single
 
 
-class MixiRepositoryImpl(private val dao : RepositoryDao) : MixiRepository {
-    override fun findAllByPage(page: Int): Single<List<Repository>> {
+class MixiRepositoryImpl(private val dao: RepositoryDao) : MixiRepository {
 
-        TODO("not implemented")
 
-        // dao, api clientを使用してデータの格納、取得を行う予定
-        /*
-        return GitHubApiClient.apiClient.getRepositoty("mixi-org")
-            .doOnNext{
-                dao.insert(RepositoryMapper.convert(it))
-            }.onErrorReturn {
-                dao.findAll()
-            }
-            */
-
+    override fun findAll(): Single<List<Repository>> {
+        return dao.findAll()
     }
 
 
-    override fun store(repository: MixiRepository): Single<Repository> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun insert(repository: MixiRepository): Single<List<Repository>> {
+        return GitHubApiClient.apiClient.getRepositoty("mixi-org")
+            .map { RepositoryConverter.convert(it) }
+            .doOnSuccess {
+                dao.insert(it)
+            }
     }
 }

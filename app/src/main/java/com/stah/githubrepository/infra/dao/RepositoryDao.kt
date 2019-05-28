@@ -2,7 +2,9 @@ package com.stah.githubrepository.infra.dao
 
 import com.stah.githubrepository.domain.entity.Repository
 import io.realm.Realm
+import rx.Single
 
+// ここにDI
 class RepositoryDao(realm: Realm) {
 
     private val realm = realm
@@ -17,7 +19,7 @@ class RepositoryDao(realm: Realm) {
     }
 
 
-    fun findAll(): List<Repository> {
+    fun findAll(): Single<List<Repository>> {
         TODO("not implemented")
         // TODO  ここからrealmのデータを取得する
         /*

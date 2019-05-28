@@ -1,9 +1,9 @@
 package com.stah.githubrepository.domain.repository
 
 import com.stah.githubrepository.domain.entity.Repository
-import io.reactivex.Single
+import rx.Single
 
 
 interface ReadMixiRepository {
-    fun findAllByPage(page: Int): Single<List<Repository>>
+    fun findAll(): Single<List<Repository>>
 }
