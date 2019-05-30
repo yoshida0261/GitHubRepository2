@@ -1,4 +1,4 @@
-package com.stah.githubrepository.domain.mapper
+package com.stah.githubrepository.domain.converter
 
 import com.stah.githubrepository.domain.entity.Repository
 import com.stah.githubrepository.domain.entity.RepositoryId
