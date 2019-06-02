@@ -1,13 +1,17 @@
 package com.stah.githubrepository.presentation.presentor
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.stah.githubrepository.R
 import com.stah.githubrepository.domain.entity.Repository
 import com.stah.githubrepository.infra.dao.RepositoryDao
 import com.stah.githubrepository.infra.repository.MixiRepositoryImpl
 import kotlinx.android.synthetic.main.activity_main.*
+
+
 
 
 class MainActivity : AppCompatActivity(), MainPresentor.Contract {
@@ -36,6 +40,9 @@ class MainActivity : AppCompatActivity(), MainPresentor.Contract {
 
         presentor.getMixiRepository()
 
+        button.setOnClickListener {
+            startActivity(Intent(this, OssLicensesMenuActivity::class.java))
+        }
 
 
     }

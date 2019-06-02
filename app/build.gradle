@@ -9,6 +9,8 @@ apply plugin: 'kotlin-kapt'
 
 apply plugin: 'realm-android'
 
+apply plugin: 'com.google.android.gms.oss-licenses-plugin'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -48,5 +50,7 @@ dependencies {
     implementation 'org.koin:koin-android:2.0.1'
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    implementation 'com.google.android.gms:play-services-oss-licenses:16.0.2'
 
 }
